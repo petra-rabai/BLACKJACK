@@ -9,7 +9,7 @@ namespace BLACKJACK
     public interface IPlayer
     {
         int Score { get; set; }
-        string[] Cards { get; set; }
+        string[] ChoosedCards { get; set; }
         string[] Decision { get; set; }
         void GetStartCards();
     }
