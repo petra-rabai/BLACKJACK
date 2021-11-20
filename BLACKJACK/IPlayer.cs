@@ -10,7 +10,7 @@ namespace BLACKJACK
     {
         int Score { get; set; }
         string[] ChoosedCards { get; set; }
-        Dictionary<chat,setting> Decision { get; set; }
-        void GetStartCards();
+        Dictionary<char,string> Decision { get; set; }
+        void ChooseStartCards();
     }
 }

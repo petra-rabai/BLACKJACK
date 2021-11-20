@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCardDeck.cs" />
+    <Compile Include="CDealer.cs" />
+    <Compile Include="CGame.cs" />
+    <Compile Include="CHuman.cs" />
+    <Compile Include="CResultSave.cs" />
     <Compile Include="ICard.cs" />
+    <Compile Include="IGame.cs" />
     <Compile Include="IPlayer.cs" />
+    <Compile Include="ISave.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
