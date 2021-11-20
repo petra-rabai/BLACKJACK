@@ -6,81 +6,60 @@ using System.Threading.Tasks;
 
 namespace BLACKJACK
 {
-    public class CCardDeck
+    public class CCardDeck : ICard
     {
-        public string[] CardSuit = new string[4];
-        public int[] CardValue = new int[13];
-        public string[] CardName = new string[52];
-        public int CardId = 0;
-        public string[,] CardsPack = new string[52,13];
+        public int Id { get; set; } = 0;
+        public string[] Suit { get; set; } = new string[4];
+        public int Value { get; set; } = 0;
+        public string Name { get; set; }
+        public string[] CardPack { get; set; } = new string[52];
 
-        public string[,] CreateCardsPack()
+        public string[] CreateCardPack()
         {
-            LoadCardSuitIdentity();
-            LoadCardValue();
-            // LoadCardName();
-            for (int id  = 0; id < 53; id++)
+            for (int suit = 0; suit < Suit.Length; suit++)
             {
-                for (int suit = 0; suit < CardSuit.Length; suit++)
-                {
-                    for (int value = 0; value < CardValue.Length; value++)
+                for (int value = 0; value < 13; value++)
+                {       
+                    Value++;
+                    if (Value == 1)
                     {
-                        CardId++;
-                        if (CardId >10 && CardId <14)
-                        {
-                            CardValue[CardId] = 10;
-                        }
-                        CardName[id] = CardSuit[suit] + " - " + CardValue[value];
-                        if (CardId == 11 || CardId == 21 || CardId == 31 || CardId == 41)
-                        {
-                            CardName[id] = "King";
-                        }
-                        if (CardId == 11 || CardId == 21 || CardId == 31 || CardId == 41)
-                        {
-                            CardName[id] = "King";
-                        }
-                        CardsPack[suit, value] = CardId.ToString() + " - " + CardName[id]+ " - " + CardValue[value];
+                        Name = "Ace";
                     }
+                    else if (Value == 11)
+                    {
+                        Name = "King";
+                    }
+                    else if (Value == 12)
+                    {
+                        Name = "Queen";
+                    }
+                    else if (Value == 13)
+                    {
+                        Name = "Jack";
+                    }
+                    else
+                    {
+                        Name = Value.ToString();
+                    }
+
+                    CardPack[Id] = Id.ToString() + " - " + Suit[suit] + " - " + Name;
+                    Id++;
                 }
+
+                Value = 0;
             }
-            
-            return CardsPack;
+
+            return CardPack;
         }
 
-        public void ShufflingCards()
+        public string[] LoadCardSuit()
         {
-            throw new NotImplementedException();
+            Suit[0] = "Dimonds";
+            Suit[1] = "Clubs";
+            Suit[2] = "Hearts";
+            Suit[3] = "Spades";
+
+            return Suit;
         }
-
-        public string[] LoadCardSuitIdentity()
-        {
-            CardSuit[0] = "Clubs";
-            CardSuit[1] = "Dimonds";
-            CardSuit[2] = "Hearts";
-            CardSuit[3] = "Spades";
-
-            return CardSuit;
-        }
-
-        public int[] LoadCardValue()
-        {
-            for (int value = 1; value < CardValue.Length; value++)
-            {
-                CardValue[value] = value;
-            }
-            return CardValue;
-        }
-
-        //public string[] LoadCardName()
-        //{
-        //    for (int suit = 0; suit < CardSuit.Length; suit++)
-        //    {
-        //        for (int value = 1; value < CardValue.Length; value++)
-        //        {
-        //            CardName[value] = CardSuit[suit] + CardValue[value];
-        //        }
-        //    }
-        //    return CardName;
-        //}
     }
 }

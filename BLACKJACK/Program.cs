@@ -11,9 +11,11 @@ namespace BLACKJACK
         static void Main(string[] args)
         {
             CCardDeck cardDeck = new CCardDeck();
-            cardDeck.CreateCardsPack();
-            
-           
+            cardDeck.CreateCardPack();
+            for (int i = 0; i < cardDeck.CardPack.Length; i++)
+            {
+                Console.WriteLine(cardDeck.CardPack.ElementAt(i));
+            }
             Console.ReadLine();
         }
     }

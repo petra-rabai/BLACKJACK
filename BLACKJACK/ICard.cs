@@ -8,14 +8,12 @@ namespace BLACKJACK
 {
     public interface ICard
     {
-        string[] CardSuit { get; set; }
-        int[] CardValue { get; set; }
-        string[] CardName { get; set; }
-        int CardId { get; set; }
-        string [,,,] CardsPack { get; set; }
-        void CreateCardsPack();
-        string[] LoadCardSuitIdentity();
-        void ShufflingCards();
-        int[] LoadCardValue();
+        int Id { get; set; }
+        string[] Suit { get; set; }
+        int Value { get; set; }
+        string Name { get; set; }
+        string[] CardPack { get; set; }
+        string[] LoadCardSuit();
+        string[] CreateCardPack();
     }
 }
