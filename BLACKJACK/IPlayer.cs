@@ -11,6 +11,6 @@ namespace BLACKJACK
         int Score { get; set; }
         string[] ChoosedCards { get; set; }
         Dictionary<char,string> Decision { get; set; }
-        void ChooseStartCards();
+        string[] ChooseStartCards(CCardDeck cardDeck);
     }
 }

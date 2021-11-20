@@ -14,6 +14,16 @@ namespace BLACKJACK
         public string Name { get; set; }
         public string[] CardPack { get; set; } = new string[52];
 
+        public string[] LoadCardSuit()
+        {
+            Suit[0] = "Dimonds";
+            Suit[1] = "Clubs";
+            Suit[2] = "Hearts";
+            Suit[3] = "Spades";
+
+            return Suit;
+        }
+
         public string[] CreateCardPack()
         {
             for (int suit = 0; suit < Suit.Length; suit++)
@@ -28,21 +38,24 @@ namespace BLACKJACK
                     else if (Value == 11)
                     {
                         Name = "King";
+                        Value = 10;
                     }
                     else if (Value == 12)
                     {
                         Name = "Queen";
+                        Value = 10;
                     }
                     else if (Value == 13)
                     {
                         Name = "Jack";
+                        Value = 10;
                     }
                     else
                     {
                         Name = Value.ToString();
                     }
 
-                    CardPack[Id] = Id.ToString() + " - " + Suit[suit] + " - " + Name;
+                    CardPack[Id] = Id.ToString() + " - " + Suit[suit] + " - " + Name + " - " + Value.ToString();
                     Id++;
                 }
 
@@ -50,16 +63,6 @@ namespace BLACKJACK
             }
 
             return CardPack;
-        }
-
-        public string[] LoadCardSuit()
-        {
-            Suit[0] = "Dimonds";
-            Suit[1] = "Clubs";
-            Suit[2] = "Hearts";
-            Suit[3] = "Spades";
-
-            return Suit;
         }
     }
 }

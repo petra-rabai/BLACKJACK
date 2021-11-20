@@ -14,5 +14,6 @@ namespace BLACKJACK
         int Bet { get; set; }
         void GetStartCardsFromPlayers(CHuman human, CDealer dealer);
         void RecieveBetFromHuman();
+        string[] CardShuffeling(CCardDeck cardDeck);
     }
 }

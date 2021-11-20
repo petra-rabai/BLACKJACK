@@ -13,8 +13,15 @@ namespace BLACKJACK
         public int AvailableCredit { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int Bet { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        public string[] CardShuffeling(CCardDeck cardDeck)
+        {
+            throw new NotImplementedException();
+        }
+
         public void GetStartCardsFromPlayers(CHuman human, CDealer dealer)
         {
+            human.ChoosedCards;
+            dealer.ChoosedCards;
             throw new NotImplementedException();
         }
 

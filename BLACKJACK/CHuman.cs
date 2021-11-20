@@ -12,9 +12,9 @@ namespace BLACKJACK
         public string[] ChoosedCards { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public Dictionary<char, string> Decision { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public void ChooseStartCards()
+        public string[] ChooseStartCards(CCardDeck cardDeck)
         {
-            throw new NotImplementedException();
+            return ChoosedCards;
         }
     }
 }
