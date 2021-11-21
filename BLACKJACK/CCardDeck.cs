@@ -26,6 +26,7 @@ namespace BLACKJACK
 
         public string[] CreateCardPack()
         {
+            LoadCardSuit();
             for (int suit = 0; suit < Suit.Length; suit++)
             {
                 for (int value = 0; value < 13; value++)

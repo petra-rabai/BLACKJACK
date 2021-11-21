@@ -12,8 +12,10 @@ namespace BLACKJACK
         int Round { get; set; }
         int AvailableCredit { get; set; }
         int Bet { get; set; }
-        void GetStartCardsFromPlayers(CHuman human, CDealer dealer);
-        void RecieveBetFromHuman();
-        string[] CardShuffeling(CCardDeck cardDeck);
+        void GetStartCardsFromPlayers(CHuman human, CDealer dealer, CCardDeck cardDeck);
+        int RecieveBetFromHuman();
+        int GenerateStartAvailableCredit();
+        void InitializeFirstRound(CHuman human, CDealer dealer);
+        void SetuptheGameTable(CHuman human, CDealer dealer, CCardDeck cardDeck);
     }
 }
