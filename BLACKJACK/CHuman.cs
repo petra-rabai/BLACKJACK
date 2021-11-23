@@ -10,7 +10,15 @@ namespace BLACKJACK
     {
         public int Score { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string[] ChoosedCards { get; set; } = new string[2];
-        public Dictionary<char, string> Decision { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Dictionary<char, string> Decision { get; set; } = new Dictionary<char, string>()
+        {
+            ['H'] = "Hit",
+            ['S'] = "Stand",
+            ['D'] = "Double",
+            ['P'] = "Split",
+            ['R'] = "Surrender",
+            ['I'] = "Insurance"
+        };
 
         public string[] ChooseStartCards(CCardDeck cardDeck)
         {
@@ -24,6 +32,12 @@ namespace BLACKJACK
             }
 
             return ChoosedCards;
+        }
+
+        public void MakeDecision(CGame game)
+        {
+            Console.WriteLine("Your current cards are: " + "\n" + ChoosedCards[0] + " " + ChoosedCards[1] + "\n");
+            Console.WriteLine("Your two cards value is: " +"\n" + game.currentCardsValue);
         }
     }
 }

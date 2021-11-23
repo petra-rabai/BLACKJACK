@@ -15,6 +15,7 @@ namespace BLACKJACK
         public int Round { get; set; } = 0;
         public int AvailableCredit { get; set; } = 0;
         public int Bet { get; set; } = 0;
+        public int currentCardsValue { get; set; }
 
         public void SetuptheGameTable(CHuman human, CDealer dealer, CCardDeck cardDeck)
         {
@@ -71,7 +72,6 @@ namespace BLACKJACK
 
         public void CheckRoundResult(CHuman human, CDealer dealer)
         {
-            int currentCardsValue;
             string[] humanFirstCardData = new string[4];
             string[] humanSecondCardData = new string[4];
             humanFirstCardData = human.ChoosedCards[0].Split('-');
@@ -84,7 +84,7 @@ namespace BLACKJACK
             }
             else
             {
-                human.MakeDecision();
+                human.MakeDecision(this);
             }
             
         }

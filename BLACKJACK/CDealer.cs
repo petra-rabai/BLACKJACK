@@ -10,7 +10,13 @@ namespace BLACKJACK
     {
         public int Score { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string[] ChoosedCards { get; set; } = new string[2];
-        public Dictionary<char, string> Decision { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Dictionary<char, string> Decision { get; set; } = new Dictionary<char, string>()
+        {
+            ['H'] = "Hit",
+            ['S'] = "Stand",
+            ['B'] = "Bust",
+            ['R'] = "Surrender"
+        };
 
         public string[] ChooseStartCards(CCardDeck cardDeck)
         {
@@ -23,6 +29,11 @@ namespace BLACKJACK
             }
 
             return ChoosedCards;
+        }
+
+        public void MakeDecision(CGame game)
+        {
+            throw new NotImplementedException();
         }
     }
 }
